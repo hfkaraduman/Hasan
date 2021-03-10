@@ -1,0 +1,10 @@
+C:\Users\Hasan\source\repos\Assesmenthasankaraduman\Assesmenthasankaraduman\bin\Debug\Assesmenthasankaraduman.exe.config
+C:\Users\Hasan\source\repos\Assesmenthasankaraduman\Assesmenthasankaraduman\bin\Debug\Assesmenthasankaraduman.exe
+C:\Users\Hasan\source\repos\Assesmenthasankaraduman\Assesmenthasankaraduman\bin\Debug\Assesmenthasankaraduman.pdb
+C:\Users\Hasan\source\repos\Assesmenthasankaraduman\Assesmenthasankaraduman\obj\Debug\Assesmenthasankaraduman.csprojAssemblyReference.cache
+C:\Users\Hasan\source\repos\Assesmenthasankaraduman\Assesmenthasankaraduman\obj\Debug\Assesmenthasankaraduman.Form1.resources
+C:\Users\Hasan\source\repos\Assesmenthasankaraduman\Assesmenthasankaraduman\obj\Debug\Assesmenthasankaraduman.Properties.Resources.resources
+C:\Users\Hasan\source\repos\Assesmenthasankaraduman\Assesmenthasankaraduman\obj\Debug\Assesmenthasankaraduman.csproj.GenerateResource.cache
+C:\Users\Hasan\source\repos\Assesmenthasankaraduman\Assesmenthasankaraduman\obj\Debug\Assesmenthasankaraduman.csproj.CoreCompileInputs.cache
+C:\Users\Hasan\source\repos\Assesmenthasankaraduman\Assesmenthasankaraduman\obj\Debug\Assesmenthasankaraduman.exe
+C:\Users\Hasan\source\repos\Assesmenthasankaraduman\Assesmenthasankaraduman\obj\Debug\Assesmenthasankaraduman.pdb
