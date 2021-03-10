@@ -32,7 +32,6 @@ namespace Assesmenthasankaraduman
             this.components = new System.ComponentModel.Container();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
-            this.textBox2 = new System.Windows.Forms.TextBox();
             this.regular = new System.Windows.Forms.Button();
             this.ara = new System.Windows.Forms.Button();
             this.degistir = new System.Windows.Forms.Button();
@@ -43,6 +42,9 @@ namespace Assesmenthasankaraduman
             this.label1 = new System.Windows.Forms.Label();
             this.esc = new System.Windows.Forms.Button();
             this.sil = new System.Windows.Forms.Button();
+            this.label2 = new System.Windows.Forms.Label();
+            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.label3 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // textBox1
@@ -60,19 +62,10 @@ namespace Assesmenthasankaraduman
             this.contextMenuStrip1.Name = "contextMenuStrip1";
             this.contextMenuStrip1.Size = new System.Drawing.Size(61, 4);
             // 
-            // textBox2
-            // 
-            this.textBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.textBox2.Location = new System.Drawing.Point(475, 374);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(313, 35);
-            this.textBox2.TabIndex = 2;
-            this.textBox2.Visible = false;
-            // 
             // regular
             // 
             this.regular.Font = new System.Drawing.Font("Microsoft Sans Serif", 7F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.regular.Location = new System.Drawing.Point(475, 229);
+            this.regular.Location = new System.Drawing.Point(475, 203);
             this.regular.Name = "regular";
             this.regular.Size = new System.Drawing.Size(313, 46);
             this.regular.TabIndex = 3;
@@ -83,9 +76,9 @@ namespace Assesmenthasankaraduman
             // 
             // ara
             // 
-            this.ara.Location = new System.Drawing.Point(475, 302);
+            this.ara.Location = new System.Drawing.Point(475, 255);
             this.ara.Name = "ara";
-            this.ara.Size = new System.Drawing.Size(313, 46);
+            this.ara.Size = new System.Drawing.Size(158, 46);
             this.ara.TabIndex = 7;
             this.ara.Text = "Ara";
             this.ara.UseVisualStyleBackColor = true;
@@ -94,9 +87,9 @@ namespace Assesmenthasankaraduman
             // 
             // degistir
             // 
-            this.degistir.Location = new System.Drawing.Point(475, 440);
+            this.degistir.Location = new System.Drawing.Point(595, 512);
             this.degistir.Name = "degistir";
-            this.degistir.Size = new System.Drawing.Size(313, 46);
+            this.degistir.Size = new System.Drawing.Size(110, 46);
             this.degistir.TabIndex = 9;
             this.degistir.Text = "Değiştir";
             this.degistir.UseVisualStyleBackColor = true;
@@ -106,9 +99,9 @@ namespace Assesmenthasankaraduman
             // textBox3
             // 
             this.textBox3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.textBox3.Location = new System.Drawing.Point(475, 508);
+            this.textBox3.Location = new System.Drawing.Point(535, 471);
             this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(313, 35);
+            this.textBox3.Size = new System.Drawing.Size(216, 35);
             this.textBox3.TabIndex = 10;
             this.textBox3.Visible = false;
             // 
@@ -136,6 +129,7 @@ namespace Assesmenthasankaraduman
             this.dosya_text.Name = "dosya_text";
             this.dosya_text.Size = new System.Drawing.Size(313, 26);
             this.dosya_text.TabIndex = 15;
+            this.dosya_text.TextChanged += new System.EventHandler(this.dosya_text_TextChanged);
             this.dosya_text.KeyDown += new System.Windows.Forms.KeyEventHandler(this.dosya_text_KeyDown);
             // 
             // label1
@@ -149,7 +143,7 @@ namespace Assesmenthasankaraduman
             // 
             // esc
             // 
-            this.esc.Location = new System.Drawing.Point(595, 652);
+            this.esc.Location = new System.Drawing.Point(616, 605);
             this.esc.Name = "esc";
             this.esc.Size = new System.Drawing.Size(75, 63);
             this.esc.TabIndex = 18;
@@ -160,20 +154,52 @@ namespace Assesmenthasankaraduman
             // 
             // sil
             // 
-            this.sil.Location = new System.Drawing.Point(475, 571);
+            this.sil.Location = new System.Drawing.Point(657, 259);
             this.sil.Name = "sil";
-            this.sil.Size = new System.Drawing.Size(313, 38);
+            this.sil.Size = new System.Drawing.Size(131, 38);
             this.sil.TabIndex = 19;
             this.sil.Text = "Sil";
             this.sil.UseVisualStyleBackColor = true;
             this.sil.Visible = false;
             this.sil.Click += new System.EventHandler(this.sil_Click_1);
             // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(475, 355);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(158, 30);
+            this.label2.TabIndex = 20;
+            this.label2.Text = "Kelime Sayısı:\r\n";
+            this.label2.Visible = false;
+            // 
+            // textBox2
+            // 
+            this.textBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.textBox2.Location = new System.Drawing.Point(595, 345);
+            this.textBox2.Name = "textBox2";
+            this.textBox2.Size = new System.Drawing.Size(193, 35);
+            this.textBox2.TabIndex = 21;
+            this.textBox2.Visible = false;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(484, 428);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(330, 40);
+            this.label3.TabIndex = 22;
+            this.label3.Text = "Değiştirilmek İstenen Kelimeyi  Aşağıya Giriniz\r\n\r\n";
+            this.label3.Visible = false;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(868, 786);
+            this.Controls.Add(this.label3);
+            this.Controls.Add(this.textBox2);
+            this.Controls.Add(this.label2);
             this.Controls.Add(this.sil);
             this.Controls.Add(this.esc);
             this.Controls.Add(this.label1);
@@ -184,12 +210,10 @@ namespace Assesmenthasankaraduman
             this.Controls.Add(this.degistir);
             this.Controls.Add(this.ara);
             this.Controls.Add(this.regular);
-            this.Controls.Add(this.textBox2);
             this.Controls.Add(this.textBox1);
             this.Name = "Form1";
             this.RightToLeftLayout = true;
             this.Text = "Form1";
-            
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -199,7 +223,6 @@ namespace Assesmenthasankaraduman
 
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.ContextMenuStrip contextMenuStrip1;
-        private System.Windows.Forms.TextBox textBox2;
         private System.Windows.Forms.Button regular;
         private System.Windows.Forms.Button ara;
         private System.Windows.Forms.Button degistir;
@@ -210,6 +233,9 @@ namespace Assesmenthasankaraduman
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button esc;
         private System.Windows.Forms.Button sil;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.Label label3;
     }
 }
 

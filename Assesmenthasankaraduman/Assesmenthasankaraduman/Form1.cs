@@ -87,7 +87,9 @@ namespace Assesmenthasankaraduman
             return re;
         }
 
-
+        //egular expression tanımlamak için texbox1.Texdeki degeri
+        //alıp parametre olarak Regular_tanimla fonksiyonuna gönderir
+        //Regular_tanımla fonksiyonundan dönen deger Re stringine atanır
         public void regular_Click(object sender, EventArgs e)
         {
             Re = Regular_tanimla(textBox1.Text);
@@ -95,6 +97,7 @@ namespace Assesmenthasankaraduman
             regular.Text = Re;
         }
 
+        //Dosya ismimiz girildikten sonra richText de dosya içerigi gösterilmektedir
          public void Metni_getir(string dosya)
         {
             dosya_ismi = dosya;
@@ -109,6 +112,8 @@ namespace Assesmenthasankaraduman
             streamReader.Close();
         }
 
+        //Girilen regulara uygun kelimeyi bulmayı saglamaktadır
+        //Metindeki sözcükleri kelime kelime ayırıp Ara fonksiyonuna göndermektedir
         public void ara_Click(object sender, EventArgs e)
         {
             richTextBox1.SelectAll();
@@ -119,12 +124,11 @@ namespace Assesmenthasankaraduman
             richTextBox1.SelectAll();
             richTextBox1.SelectionBackColor = Color.White;
             sayici = 0;
-            ArrayList kelimeler = new ArrayList();
             int metin_uzunluk = metin.Length;
             for(int i=0;i<metin_uzunluk;i++)
             {
 
-                //if(metin[i]!=' ' && metin[i]!=',' && metin[i]!='.' && metin[i] != ';' && metin[i] != ':' && metin[i] != '/')
+                
                 if (char.IsLetter(metin[i]) == true)
                 {
                     sorgulanacak_kelime += metin[i];
@@ -132,7 +136,6 @@ namespace Assesmenthasankaraduman
                 else
                     
                 {
-                    kelimeler.Add(sorgulanacak_kelime);
                     Ara(sorgulanacak_kelime);
                     sorgulanacak_kelime = "";
                 }
@@ -140,6 +143,9 @@ namespace Assesmenthasankaraduman
             
         }
 
+        //Metinden gelen kelimeleri alıp, kelimenin regulara uyup
+        //uymadıgını anlamakta ve eger kelime regulara uyuyorsa 
+        //richtextboxda o kelimeleri sarı arkaplan rengiyle göstermektedir
         public void Ara(string sorgulanacak_kelime)
         {
 
@@ -167,11 +173,14 @@ namespace Assesmenthasankaraduman
                     start = richTextBox1.Text.IndexOf(sorgulanacak_kelime, start) + 1;
 
                 }
-                textBox2.Text = sayici.ToString();
+                
+                textBox2.Text = sayici.ToString()+" tane";
             }
 
         }
 
+        //metindeki kelimeleri ve degiştirilecek kelimeyi 
+        //Degistir fonksiyonuna parametre olarak göndermektedir.
         public void degistir_Click(object sender, EventArgs e)
         {
             Re = Regular_tanimla(textBox1.Text);
@@ -209,6 +218,8 @@ namespace Assesmenthasankaraduman
 
         }
 
+        //Eger parametre olarak gelen kelime regular expressiona
+        //uyuyorsa kelimeyi degiştirilecek kelimeyle degiştirmektedir
         public void Degistir(string sorgulanacak_kelime,string degistirilecek_kelime)
         {
             Regex reg = new Regex(Re);
@@ -224,43 +235,6 @@ namespace Assesmenthasankaraduman
             
         }
 
-        public void ara_Click_1(object sender, EventArgs e)
-        {
-            Re = Regular_tanimla(textBox1.Text);
-
-            regular.Text = Re;
-
-            degistirilecek_metin = metin;
-            sorgulanacak_kelime = "";
-            richTextBox1.SelectAll();
-            richTextBox1.SelectionBackColor = Color.White;
-
-
-            int metin_uzunluk = metin.Length;
-            for (int i = 0; i < metin_uzunluk; i++)
-            {
-                if (metin[i] != ' ' && metin[i] != ',' && metin[i] != '.' && metin[i] != ';' && metin[i] != ':')
-                {
-                    sorgulanacak_kelime += metin[i];
-                }
-                else
-
-                {
-                    Degistir(sorgulanacak_kelime, "");
-                    sorgulanacak_kelime = "";
-                }
-
-
-            }
-            richTextBox1.Clear();
-            richTextBox1.SelectAll();
-            metin = degistirilecek_metin;
-            richTextBox1.Text = metin;
-
-
-        }
-
-
 
         private void dosya_text_KeyDown(object sender, KeyEventArgs e)
         {
@@ -272,12 +246,15 @@ namespace Assesmenthasankaraduman
                 label1.Visible = false;
                 textBox1.Visible = true;
                 textBox2.Visible = true;
+
                 textBox3.Visible = true;
                 regular.Visible = true;
                 ara.Visible = true;
                 degistir.Visible = true;
                 sil.Visible = true;
                 esc.Visible = true;
+                label2.Visible = true;
+                label3.Visible = true;
             }
             
         }
@@ -291,6 +268,7 @@ namespace Assesmenthasankaraduman
             Application.Exit();
         }
 
+        //Regulara uyan kelimeyi Degistir fonksiyonuna parametre olarak vermektedir
         public void sil_Click_1(object sender, EventArgs e)
         {
             Re = Regular_tanimla(textBox1.Text);
@@ -323,6 +301,11 @@ namespace Assesmenthasankaraduman
             richTextBox1.SelectAll();
             metin = degistirilecek_metin;
             richTextBox1.Text = metin;
+        }
+
+        private void dosya_text_TextChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }
