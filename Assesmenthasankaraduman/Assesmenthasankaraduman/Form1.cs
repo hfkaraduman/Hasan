@@ -25,7 +25,7 @@ namespace Assesmenthasankaraduman
         public string dosya_ismi;
         
         
-       // public string metin;
+        public string metin;
         public string degistirilecek_metin;
         public string Re;
 
@@ -165,7 +165,7 @@ namespace Assesmenthasankaraduman
                 while (start <= end)
                 {
 
-                    //richTextBox1.Find(sorgulanacak_kelime, start, richTextBox1.TextLength, RichTextBoxFinds.);
+                    richTextBox1.Find(sorgulanacak_kelime, start, richTextBox1.TextLength, RichTextBoxFinds.WholeWord);
 
 
                     richTextBox1.SelectionBackColor = Color.Yellow;
